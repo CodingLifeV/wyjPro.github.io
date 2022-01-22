@@ -1,0 +1,57 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaShare – pro1</title>
+    <link>http://wyjPro.github.io/projects/pro1/</link>
+    <description>Recent content in pro1 on JavaShare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="http://wyjPro.github.io/projects/pro1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Redis</title>
+      <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;This is a placeholder page that shows you how to use this template site.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The Overview is where your users find out about your project. Depending on the size of your&lt;/p&gt;
+&lt;p&gt;Try answering these questions for your user in this page:&lt;/p&gt;
+&lt;h2 id=&#34;二级标题可以显示在侧边导航栏&#34;&gt;二级标题可以显示在侧边导航栏&lt;/h2&gt;
+&lt;p&gt;文本&lt;/p&gt;
+&lt;h3 id=&#34;三级标题可以显示在侧边导航栏&#34;&gt;三级标题可以显示在侧边导航栏&lt;/h3&gt;
+&lt;h1 id=&#34;一级标题不显示在侧边导航栏&#34;&gt;一级标题不显示在侧边导航栏&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;代码块&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;加粗&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 代码注释	
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ABC
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/* EFG */&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;System&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;out&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#c4a000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;文本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片上传方式有误：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;![](D:/Program Files/hugo/my-hugo-site/docsy-example/content/en/docs/自定义页面/Redis/Redis.assets/image-20220112170053121.png)&lt;/p&gt;
+&lt;hr&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
