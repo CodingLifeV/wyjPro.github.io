@@ -2646,7 +2646,7 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 &lt;h4 class=&#34;alert-heading&#34;&gt;安装成功&lt;/h4&gt;
 
        &lt;details&gt;
-       &lt;summary&gt;输入命令终端显示内容：&lt;/summary&gt;
+       &lt;summary&gt;&lt;/summary&gt;
        &lt;p&gt;
       &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201201242132.png&#34; style=&#34;zoom:60%;&#34; /&gt;
        &lt;/p&gt;
@@ -2670,7 +2670,7 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 
     &lt;p&gt;此命令下载测试映像并在容器中运行它，当容器运行时，它会打印一条消息并退出。&lt;/p&gt;
    &lt;details&gt;
-       &lt;summary&gt;打印消息：&lt;/summary&gt;
+       &lt;summary&gt;&lt;/summary&gt;
        &lt;p&gt;
               &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201201255835.png&#34; style=&#34;zoom:60%;&#34; /&gt;
        &lt;/p&gt;
@@ -2801,10 +2801,10 @@ hello-world           latest       feb5d9fea6a5   &lt;span style=&#34;color:#000
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Success&lt;/h4&gt;
 
-      &lt;details&gt;
-      &lt;summary&gt;测试结果：&lt;/summary&gt;
+      &lt;details &gt;
+      &lt;summary&gt;&lt;/summary&gt;
       &lt;p&gt;
-     &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201211116946.png&#34; alt=&#34;image-20220121111556773&#34; style=&#34;zoom:60%;&#34; /&gt;
+          &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201211116946.png&#34; alt=&#34;image-20220121111556773&#34; style=&#34;zoom:60%;&#34; /&gt;
       &lt;/p&gt;
   &lt;/details&gt;
 
@@ -2823,7 +2823,7 @@ docker pull  &amp;lt; IMAGE ID&amp;gt;&lt;span style=&#34;color:#ce5c00;font-wei
 &lt;h4 class=&#34;alert-heading&#34;&gt;Success&lt;/h4&gt;
 
       &lt;details&gt;
-      &lt;summary&gt;测试结果：&lt;/summary&gt;
+      &lt;summary&gt;&lt;/summary&gt;
       &lt;p&gt;
      &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201211132649.png&#34; alt=&#34;image-20220121111556773&#34; style=&#34;zoom:60%;&#34; /&gt;
       &lt;/p&gt;
@@ -2839,10 +2839,10 @@ docker pull  &amp;lt; IMAGE ID&amp;gt;&lt;span style=&#34;color:#ce5c00;font-wei
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Success&lt;/h4&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip&lt;/h4&gt;
 
       &lt;details&gt;
-      &lt;summary&gt;测试结果：&lt;/summary&gt;
+      &lt;summary&gt;&lt;/summary&gt;
       &lt;p&gt;
      &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201211134544.png&#34; alt=&#34;image-20220121113442425&#34; alt=&#34;image-20220121111556773&#34; style=&#34;zoom:60%;&#34; /&gt;
       &lt;/p&gt;
