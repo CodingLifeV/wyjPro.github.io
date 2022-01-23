@@ -33,7 +33,7 @@
 <meta itemprop="description" content="学会使用 `Docker` 部署项目
 "><meta itemprop="datePublished" content="2022-01-19T14:23:51&#43;08:00" />
 <meta itemprop="dateModified" content="2022-01-19T14:23:51&#43;08:00" />
-<meta itemprop="wordCount" content="249">
+<meta itemprop="wordCount" content="460">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker入门"/>
 <meta name="twitter:description" content="学会使用 `Docker` 部署项目
@@ -285,13 +285,15 @@ if (!doNotTrack) {
     <li><a href="#docker-安装"><code>Docker</code> 安装📃</a>
       <ul>
         <li><a href="#linux-安装"><code>Linux</code> 安装</a></li>
-        <li><a href="#windows-安装"><code>Windows</code> 安装</a></li>
-        <li><a href="#macos-安装"><code>macOS</code> 安装</a></li>
+        <li><a href="#windows-安装">Windows 安装</a></li>
+        <li><a href="#macos-安装">macOS 安装</a></li>
       </ul>
     </li>
-    <li><a href="#docker-命令"><code>Docker</code> 命令📃</a>
+    <li><a href="#docker-命令">Docker 命令📃</a>
       <ul>
+        <li><a href="#帮助命令">帮助命令</a></li>
         <li><a href="#镜像命令">镜像命令</a></li>
+        <li><a href="#容器命令">容器命令</a></li>
       </ul>
     </li>
   </ul>
@@ -420,71 +422,81 @@ if (!doNotTrack) {
 
 </div>
 
-<p>学习 <code>Dockers</code> 用户：</p>
+<p>学习 Docker 用户：</p>
 <ul>
-<li>如果项目部署在您的电脑上，无需使用 <code>Docker</code></li>
-<li>仅仅想快速学习如何掌握使用`Docker部署，学习使用标注🚩的章节</li>
+<li>如果项目部署在您的电脑上，无需使用 Docker</li>
+<li>仅仅想快速学习如何掌握使用 Docker 部署，学习使用标注🚩的章节</li>
 </ul>
-<p><code>Docker</code>为可选项目，推荐学习</p>
+<p>Docker 为可选项目，推荐学习</p>
 <h2 id="docker-概述"><code>Docker</code> 概述📃</h2>
 <p><strong>Docker是什么<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></strong></p>
-<p><code>Docker</code>是一个虚拟环境容器，可以将你的开发环境、代码、配置文件等一并打包到这个容器中，并发布和应用到任意平台中。</p>
-<p>比如，你在本地用<code>Java</code>开发项目，开发测试完成后，就可以将<code>Java</code>项目及其依赖包、各种插件、<code>Mysql</code>、<code>Nginx</code>等打包到一个容器中，然后部署到任意你想部署到的环境。</p>
+<p>Docker 是一个虚拟环境容器，可以将你的开发环境、代码、配置文件等一并打包到这个容器中，并发布和应用到任意平台中。</p>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Info</h4>
+
+    例如，你在本地用 Java 开发项目，开发测试完成后，就可以将 Java 项目及其依赖包、各种插件、MySQL、Nginx 等打包到一个容器中，然后部署到任意你想部署到的环境。
+
+</div>
+
 <p><strong>Docker的三个概念<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></strong></p>
 <ol>
 <li>
-<p><strong>镜像（Image）</strong>：类似于虚拟机中的镜像，是一个包含有文件系统的面向<code>Docker</code>引擎的只读模板。可以简单理解为一个镜像即是一个可执行程序。</p>
+<p><strong>镜像（Image）</strong>：类似于虚拟机中的镜像，是一个包含有文件系统的面向 Docker 引擎的<strong>只读模板</strong>。可以简单理解为一个镜像即是一个可执行程序。</p>
 </li>
 <li>
-<p><strong>容器（Container）</strong>：类似于运行起来的进程，可以将其看作一个极简的<code>Linux</code>系统环境（包括<code>root</code>权限、进程空间、用户空间和网络空间等），以及运行在其中的应用程序。</p>
-<p><code>Docker</code>引擎利用容器来运行、隔离各个应用。容器是镜像创建的应用实例，如果说<code>Image</code>是定义的一个类，那么<code>Container</code>则是这个类<code>new</code>出来的实例。</p>
-<p>可以创建、启动、停止、删除容器，各个容器之间是是相互隔离的，互不影响。
+<p><strong>容器（Container）</strong>：类似于运行起来的进程，可以将其看作一个<a href="#link_docker1">极简的 Linux 系统环境</a>以及运行在其中的应用程序。Docker 引擎利用容器来运行、隔离各个应用。容器是镜像创建的应用实例，如果说 Image 是定义的一个类，那么 Container 则是这个类 new 出来的实例。可以创建、启动、停止、删除容器，各个容器之间是是相互隔离的，互不影响。</p>
+
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">注意</h4>
 
-    镜像本身是只读的，容器从镜像启动时，<code>Docker</code>在镜像的上层创建一个可写层，镜像本身不变。
+    镜像本身是只读的，容器从镜像启动时，Docker 在镜像的上层创建一个可写层，镜像本身不变。
 
 </div>
-</p>
+
 </li>
 <li>
-<p><strong>仓库（Repository）</strong>：类似于代码仓库，这里是镜像仓库，是<code>Docker</code>用来集中存放镜像文件的地方。</p>
+<p><strong>仓库（Repository）</strong>：类似于代码仓库，这里是镜像仓库，是 Docker 用来集中存放镜像文件的地方。</p>
 
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">注意与注册服务器（Registry）的区别：</h4>
 
-    <p>注册服务器是存放仓库的地方，一般会有多个仓库；而仓库是存放镜像的地方，一般每个仓库存放一类镜像，</p>
-<p>每个镜像利用<code>tag</code>进行区分，比如<code>Ubuntu</code>仓库存放有多个版本（12.04、14.04等）的<code>Ubuntu</code>镜像。</p>
-
+    注册服务器是存放仓库的地方，一般会有多个仓库；而仓库是存放镜像的地方，一般每个仓库存放一类镜像，每个镜像利用 tag 进行区分，比如 Ubuntu 仓库存放有多个版本（12.04、14.04等）的 Ubuntu 镜像。
 
 </div>
 
 </li>
 </ol>
 <h2 id="docker-安装"><code>Docker</code> 安装📃</h2>
-<p>参考官方<a href="https://docs.docker.com/engine/install/">安装教程</a></p>
 <h3 id="linux-安装"><code>Linux</code> 安装</h3>
-<p>以<code>CentOS</code>为例，要在<code>CentOS</code>上开始使用<code>Docker</code>引擎，请确保满足先决条件：<code>CentOS</code>版本要求<code>CentOS 7</code>或者 <code>CentOS 8</code>，然后在安装<code>Docker</code> ，更多安装方式可移步官方参考<a href="https://docs.docker.com/engine/install/centos/">安装教程</a></p>
+<p>以 CentOS 为例，要在 CentOS 上开始使用 Docker 引擎，请确保满足<strong>先决条件</strong>：CentOS 版本要求 CentOS 7 或者 CentOS 8，然后在安装 Docker，更多安装方式可移步官方参考<a href="https://docs.docker.com/engine/install/centos/">安装教程</a></p>
 <p><strong>安装步骤</strong>如下：</p>
 <ol>
 <li>
-<p>确定<code>CentOS</code>版本，要求<code>CentOS 7</code>或者 <code>CentOS 8</code></p>
+<p>确定 CentOS 版本，要求CentOS 7 或者 CentOS 8</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /etc/os-release
-</code></pre></div><p><img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201201104316.png" style="zoom:70%;" />
-
+</code></pre></div>
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">提示</h4>
 
-    以下命令都在<code>Linux</code>终端执行
+       <details>
+       <summary></summary>
+       <p>
+      <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201201104316.png" style="zoom:60%;" />
+       </p>
+   </details>
+
 
 </div>
-</p>
+
+<p>以下命令都在 Linux 终端执行</p>
 </li>
 <li>
-<p>卸载旧版本 <code>docker</code></p>
+<p>卸载旧版本 Docker</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum remove docker <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>                  docker-client <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>                  docker-client-latest <span style="color:#4e9a06">\
@@ -498,7 +510,7 @@ if (!doNotTrack) {
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">提示</h4>
 
-    旧版本的 <code>Docker</code> 被称为 <code>docker</code> 或 <code>docker-engine</code>，卸载时路径<code>/var/lib/docker/</code> 下的内容，包括镜像<code>images</code>、容器<code>containers</code>、卷<code>volumes</code>和网络<code>networks</code>，都将被保留。 <code>Docker</code>引擎包现在称为<code>docker-ce</code>
+    旧版本的  Docker 被称为 docker 或 docker-engine，卸载时路径<code>/var/lib/docker/</code> 下的内容，包括镜像images、容器 containers、卷 volumes 和网络 networks，都将被保留。 Docker 引擎包现在称为<code>docker-ce</code>
 
 </div>
 
@@ -520,16 +532,23 @@ sudo yum-config-manager <span style="color:#4e9a06">\
 </span><span style="color:#4e9a06"></span>    https://download.docker.com/linux/centos/docker-ce.repo
 </code></pre></div></li>
 <li>
-<p>安装<code>Docker</code>社区版</p>
+<p>安装 Docker 社区版</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install docker-ce-&lt;VERSION_STRING&gt; docker-ce-cli-&lt;VERSION_STRING&gt; containerd.io
 </code></pre></div>
 
 <div class="alert alert-info" role="alert">
 <h4 class="alert-heading">提示</h4>
 
-    <p><code>&lt;VERSION_STRING&gt;</code>为版本号，例如<code>docker-ce-18.09.1</code>，此命令会安装 <code>Docker</code>，但不会启动 <code>Docker</code>。 它还创建了一个 <code>docker</code> 组，但是默认情况下它不会将任何用户添加到该组中。 <code>&lt;VERSION_STRING&gt;</code>为可选项，也可以直接省略安装：</p>
+    <ol>
+<li>
+<p><code>docker-ce</code>为社区版</p>
+</li>
+<li>
+<p><code>&lt;VERSION_STRING&gt;</code>为版本号，例如<code>docker-ce-18.09.1</code>，此命令会安装 Docker，但不会启动 Docker。 它还创建了一个 Docker 组，但是默认情况下它不会将任何用户添加到该组中。 <code>&lt;VERSION_STRING&gt;</code>为可选项，也可以直接省略安装：</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo yum install docker-ce docker-ce-cli containerd.io
-</code></pre></div>
+</code></pre></div></li>
+</ol>
+
 
 </div>
 
@@ -554,11 +573,11 @@ sudo yum-config-manager <span style="color:#4e9a06">\
 
 </li>
 <li>
-<p>启动<code>Docker</code></p>
+<p>启动 Docker</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo systemctl start docker
 </code></pre></div></li>
 <li>
-<p>通过运行 <code>hello-world</code> 镜像来验证<code>Docker</code>引擎是否已正确安装</p>
+<p>通过运行 hello-world 镜像来验证 Docker 引擎是否已正确安装</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo docker run hello-world
 </code></pre></div>
 
@@ -578,16 +597,163 @@ sudo yum-config-manager <span style="color:#4e9a06">\
 
 </li>
 </ol>
-<h3 id="windows-安装"><code>Windows</code> 安装</h3>
-<h3 id="macos-安装"><code>macOS</code> 安装</h3>
-<h2 id="docker-命令"><code>Docker</code> 命令📃</h2>
+<h3 id="windows-安装">Windows 安装</h3>
+<h3 id="macos-安装">macOS 安装</h3>
+<h2 id="docker-命令">Docker 命令📃</h2>
+<h3 id="帮助命令">帮助命令</h3>
+<div class="card-deck mb-4">
+  	<div class="card mb-4">
+  
+    <div class="card-header">
+      
+        查看Docker版本信息
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_5nd">docker version</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
+
+	 <div class="card mb-4">
+  
+    <div class="card-header">
+      
+        查看Docker系统信息
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_6nd">docker info</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
+	
+  	<div class="card mb-4">
+  
+    <div class="card-header">
+      
+        帮助命令
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_7nd">docker [命令COMMAND] &ndash;help</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
+
+</div>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Tip</h4>
+
+    <p>每一个命令大括号<code>[...]</code>中的内容为可选参数，例如</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ce5c00;font-weight:bold">[</span>root@VM-24-11-centos ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># docker version --help</span>
+Usage:  docker version <span style="color:#ce5c00;font-weight:bold">[</span>OPTIONS<span style="color:#ce5c00;font-weight:bold">]</span>
+Show the Docker version information
+Options:
+  -f, --format string       Format the output using the given Go template
+      --kubeconfig string   Kubernetes config file
+<span style="color:#ce5c00;font-weight:bold">[</span>root@VM-24-11-centos ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic">#</span>
+</code></pre></div><p>打印出了<code>docker version</code>命令的使用方式，使用<code>docker --help</code>可以打印出所有命令的简单</p>
+
+
+</div>
+
+<hr>
+<ul>
+<li>
+<p><a id=link_5nd><strong><code>docker version</code></strong></a>：查看 Docker 版本信息</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker version
+</code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Success</h4>
+
+      <details >
+      <summary></summary>
+      <p>
+          <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231418251.png" />
+      </p>
+  </details>
+
+
+</div>
+
+</li>
+<li>
+<p><a id=link_6nd><strong><code>docker info</code></strong></a>：查看 Docker 系统信息，包括镜像和容器的数量</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker info
+</code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Success</h4>
+
+      <details >
+      <summary></summary>
+      <p>
+          <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231112010.png" style="zoom:50%;" />
+      </p>
+  </details>
+
+
+</div>
+
+</li>
+<li>
+<p><a id=link_7nd><strong><code>docker [命令COMMAND] --help</code></strong></a>：查看 Docker 系统信息，包括镜像和容器的数量</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker --help
+</code></pre></div>
+
+<div class="alert alert-success" role="alert">
+<h4 class="alert-heading">Success</h4>
+
+      <details >
+      <summary></summary>
+      <p>
+          <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231115318.png" style="zoom:50%;" />
+      </p>
+  </details>
+
+
+</div>
+
+</li>
+</ul>
 <h3 id="镜像命令">镜像命令</h3>
 <p><div class="card-deck mb-4">
   	<div class="card mb-4">
   
     <div class="card-header">
       
-        查看本地系统镜像信息
+        查看本地主机镜像信息
       
     </div>
   
@@ -619,7 +785,7 @@ sudo yum-config-manager <span style="color:#4e9a06">\
     
       <p class="card-text">
         
-          <a href="#_link_2nd">docker search</a>
+          <a href="#link_2nd">docker search</a>
         
       </p>
     
@@ -641,7 +807,7 @@ sudo yum-config-manager <span style="color:#4e9a06">\
     
       <p class="card-text">
         
-          <a href="#_link_3nd">docker pull</a>
+          <a href="#link_3nd">docker pull</a>
         
       </p>
     
@@ -665,7 +831,7 @@ sudo yum-config-manager <span style="color:#4e9a06">\
     
       <p class="card-text">
         
-          <a href="#_link_4nd">docker rmi -f &lt; IMAGE ID&gt;</a>
+          <a href="#link_4nd">docker rmi -f &lt; IMAGE ID&gt;</a>
         
       </p>
     
@@ -677,21 +843,32 @@ sudo yum-config-manager <span style="color:#4e9a06">\
 <hr>
 <ul>
 <li>
-<p><a id=link_1nd><strong>docker image</strong></a>：查看所有本地系统中镜像信息</p>
+<p><a id=link_1nd><strong><code>docker image</code></strong></a>：查看所有本地主机镜像信息</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#ce5c00;font-weight:bold">[</span>root@VM-24-11-centos ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># docker images</span>
 REPOSITORY            TAG          IMAGE ID       CREATED        SIZE
 docsy/docsy-example   latest       3654c1a49620   <span style="color:#0000cf;font-weight:bold">2</span> days ago     673MB
 klakegg/hugo          ext-alpine   99297968b5d5   <span style="color:#0000cf;font-weight:bold">4</span> weeks ago    671MB
 hello-world           latest       feb5d9fea6a5   <span style="color:#0000cf;font-weight:bold">3</span> months ago   13.3kB
 </code></pre></div><ul>
-<li><code>REPOSITORY</code>：镜像的仓库源</li>
-<li><code>TAG</code>：镜像标签</li>
-<li><code>IMAGE ID</code>：镜像ID</li>
-<li><code>SIZE</code>：镜像大小</li>
+<li>
+<p><code>REPOSITORY</code>：镜像的仓库源</p>
+</li>
+<li>
+<p><code>TAG</code>：镜像标签</p>
+</li>
+<li>
+<p><code>IMAGE ID</code>：镜像ID</p>
+</li>
+<li>
+<p><code>SIZE</code>：镜像大小</p>
+</li>
+<li>
+<p><code>CREATED</code>：镜像创建时间</p>
+</li>
 </ul>
 </li>
 <li>
-<p><a id=_link_2nd><strong>docker search</strong></a>：查看存在的镜像信息</p>
+<p><a id=link_2nd><strong><code>docker search</code></strong></a>：查看存在的镜像信息</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker search hello-world
 </code></pre></div>
 
@@ -710,7 +887,7 @@ hello-world           latest       feb5d9fea6a5   <span style="color:#0000cf;fon
 
 </li>
 <li>
-<p><a id=_link_3nd><strong>docker pull</strong></a>：下载镜像</p>
+<p><a id=link_3nd><strong><code>docker pull</code></strong></a>：下载镜像</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull &lt; IMAGE ID&gt; <span style="color:#8f5902;font-style:italic"># 默认下载最近 latest 版本的镜像</span>
 docker pull  &lt; IMAGE ID&gt;<span style="color:#ce5c00;font-weight:bold">[</span>: tag<span style="color:#ce5c00;font-weight:bold">]</span> <span style="color:#8f5902;font-style:italic"># 下载指定版本的镜像</span>
 </code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull kitematic/hello-world-nginx
@@ -731,7 +908,7 @@ docker pull  &lt; IMAGE ID&gt;<span style="color:#ce5c00;font-weight:bold">[</sp
 
 </li>
 <li>
-<p><a id=_link_4nd><strong>docker rmi -f <IMAGE ID> [IMAGE ID] [IMAGE ID]</strong></a>：删除镜像</p>
+<p><a id=link_4nd><strong><code>docker rmi -f &lt;IMAGE ID&gt; [IMAGE ID] [IMAGE ID]</code></strong></a>：删除镜像</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rmi -f 3654c1a49620
 </code></pre></div>
 
@@ -750,42 +927,267 @@ docker pull  &lt; IMAGE ID&gt;<span style="color:#ce5c00;font-weight:bold">[</sp
 
 </li>
 </ul>
-
-
-<div class="alert alert-warning" role="alert">
-<h4 class="alert-heading">警告</h4>
-
+<h3 id="容器命令">容器命令</h3>
+<div class="card-deck mb-4">
+  	<div class="card mb-4">
+  
+    <div class="card-header">
+      
+        新建容器并运行
+      
+    </div>
+  
+  <div class="card-body">
     
-
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_1nd">docker run</a>
+        
+      </p>
+    
+  </div>
+  
 </div>
 
-
-
-<div class="alert alert-info" role="alert">
-<h4 class="alert-heading">提示</h4>
-
+  	<div class="card mb-4">
+  
+    <div class="card-header">
+      
+        查看容器信息
+      
+    </div>
+  
+  <div class="card-body">
     
-
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_2nd">docker ps [OPTIONS]</a>
+        
+      </p>
+    
+  </div>
+  
 </div>
 
+  	<div class="card mb-4">
+  
+    <div class="card-header">
+      
+        删除容器
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_3nd">docker rm</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
 
+</div>
+<div class="card-deck mb-4">
+    <div class="card mb-4">
+  
+    <div class="card-header">
+      
+        查看本地系统镜像信息
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_1nd">docker start</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
+
+    <div class="card mb-4">
+  
+    <div class="card-header">
+      
+        查看存在的镜像信息
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_2nd">docker restart</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
+
+	<div class="card mb-4">
+  
+    <div class="card-header">
+      
+        下载镜像
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_3nd">docker stop</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
+
+	<div class="card mb-4">
+  
+    <div class="card-header">
+      
+        下载镜像
+      
+    </div>
+  
+  <div class="card-body">
+    
+    
+    
+      <p class="card-text">
+        
+          <a href="#link_3nd">docker kill</a>
+        
+      </p>
+    
+  </div>
+  
+</div>
+
+</div>
+<hr>
+<ul>
+<li>
+<p><a id=link_4nd><strong><code>docker run</code></strong></a>：新建容器并运行</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run <span style="color:#ce5c00;font-weight:bold">[</span>可选参数<span style="color:#ce5c00;font-weight:bold">]</span> 镜像IMAGE <span style="color:#ce5c00;font-weight:bold">[</span>COMMAND<span style="color:#ce5c00;font-weight:bold">]</span>
+</code></pre></div><p>常用可选参数：</p>
+<ul>
+<li><code>--name=&quot;NAME&quot;</code>：容器名字</li>
+<li><code>-d</code>：容器在后台运行</li>
+<li><code>-it</code>：以交互模式运行容器，并为容器重新分配一个<a id="link_docker1">伪输入终端</a>，使用命令<code>exit</code>退出容器</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># 启动容器, 进入容器环境(伪输入终端),类似一个极简的Linux环境,可以执行Linux相关命令</span>
+<span style="color:#ce5c00;font-weight:bold">[</span>root@VM-24-11-centos ~<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># docker run -it centos:latest /bin/bash </span>
+</code></pre></div>
 
 <div class="alert alert-success" role="alert">
-<h4 class="alert-heading">成功</h4>
+<h4 class="alert-heading">Success</h4>
 
-    
+      <details>
+      <summary></summary>
+      <p>
+     <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231350418.png" style="zoom:60%;" />
+      </p>
+  </details>
 
-</div>
-
-
-
-<div class="alert alert-secondary" role="alert">
-<h4 class="alert-heading">Warning</h4>
-
-    此命令下载测试映像并在容器中运行它。 当容器运行时，它会打印一条消息并退出。
 
 </div>
 
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># 退出容器</span>
+<span style="color:#ce5c00;font-weight:bold">[</span>root@3a6349d6c1b4 /<span style="color:#ce5c00;font-weight:bold">]</span><span style="color:#8f5902;font-style:italic"># exit </span>
+<span style="color:#204a87">exit</span>
+</code></pre></div>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Tip</h4>
+
+    <ol>
+<li>
+<p>使用<code>exit</code>退出容器，此时容器的状态处于 Exit，而不是后台运行。若不使用 <code>exit</code>，而是使用CTRL+p CTRL+q 退出，此时容器的状态为Up</p>
+</li>
+<li>
+<p>如果使用<code>-d</code>参数，则只会在后台运行容器<code>centos:latest</code>，而不会进入伪终端</p>
+</li>
+</ol>
+  <details>
+      <summary></summary>
+      <p>
+     <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231935209.png" style="zoom:60%;" />
+      </p>
+  </details>
+
+
+</div>
+
+</li>
+<li>
+<p><a id=link_4nd><strong><code>docker ps</code></strong></a>：显示当前正在运行的容器</p>
+<p>可选参数：</p>
+<ul>
+<li><code>-a</code>：显示所有的容器，包括未运行的</li>
+<li><code>-n</code>：列出最近创建的n个容器</li>
+<li><code>-q</code>：只显示容器的编号</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8f5902;font-style:italic"># docker ps -a</span>
+</code></pre></div>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Tip</h4>
+
+      <details>
+      <summary></summary>
+      <p>
+     <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231918349.png" style="zoom:60%;" />
+      </p>
+  </details>
+
+
+</div>
+
+</li>
+<li>
+<p><code>docker rm</code>：删除容器</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker rm 容器ID     <span style="color:#8f5902;font-style:italic"># 删除指定容器, 不能删除正在运行的容器</span>
+docker rm -f 容器ID  <span style="color:#8f5902;font-style:italic"># 强制删除指定容器</span>
+docker rm <span style="color:#204a87;font-weight:bold">$(</span>docker ps -a -q<span style="color:#204a87;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic"># 删除所有已经停止的容器</span>
+</code></pre></div>
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Tip</h4>
+
+      <details>
+      <summary></summary>
+      <p>
+     <img src="https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231955445.png" style="zoom:60%;" />
+      </p>
+  </details>
+
+
+</div>
+
+</li>
+</ul>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

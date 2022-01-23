@@ -2523,71 +2523,81 @@ bar := &amp;quot;foo&amp;quot;;
 
 &lt;/div&gt;
 
-&lt;p&gt;学习 &lt;code&gt;Dockers&lt;/code&gt; 用户：&lt;/p&gt;
+&lt;p&gt;学习 Docker 用户：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;如果项目部署在您的电脑上，无需使用 &lt;code&gt;Docker&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;仅仅想快速学习如何掌握使用`Docker部署，学习使用标注🚩的章节&lt;/li&gt;
+&lt;li&gt;如果项目部署在您的电脑上，无需使用 Docker&lt;/li&gt;
+&lt;li&gt;仅仅想快速学习如何掌握使用 Docker 部署，学习使用标注🚩的章节&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;Docker&lt;/code&gt;为可选项目，推荐学习&lt;/p&gt;
+&lt;p&gt;Docker 为可选项目，推荐学习&lt;/p&gt;
 &lt;h2 id=&#34;docker-概述&#34;&gt;&lt;code&gt;Docker&lt;/code&gt; 概述📃&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Docker是什么&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Docker&lt;/code&gt;是一个虚拟环境容器，可以将你的开发环境、代码、配置文件等一并打包到这个容器中，并发布和应用到任意平台中。&lt;/p&gt;
-&lt;p&gt;比如，你在本地用&lt;code&gt;Java&lt;/code&gt;开发项目，开发测试完成后，就可以将&lt;code&gt;Java&lt;/code&gt;项目及其依赖包、各种插件、&lt;code&gt;Mysql&lt;/code&gt;、&lt;code&gt;Nginx&lt;/code&gt;等打包到一个容器中，然后部署到任意你想部署到的环境。&lt;/p&gt;
+&lt;p&gt;Docker 是一个虚拟环境容器，可以将你的开发环境、代码、配置文件等一并打包到这个容器中，并发布和应用到任意平台中。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Info&lt;/h4&gt;
+
+    例如，你在本地用 Java 开发项目，开发测试完成后，就可以将 Java 项目及其依赖包、各种插件、MySQL、Nginx 等打包到一个容器中，然后部署到任意你想部署到的环境。
+
+&lt;/div&gt;
+
 &lt;p&gt;&lt;strong&gt;Docker的三个概念&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;镜像（Image）&lt;/strong&gt;：类似于虚拟机中的镜像，是一个包含有文件系统的面向&lt;code&gt;Docker&lt;/code&gt;引擎的只读模板。可以简单理解为一个镜像即是一个可执行程序。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;镜像（Image）&lt;/strong&gt;：类似于虚拟机中的镜像，是一个包含有文件系统的面向 Docker 引擎的&lt;strong&gt;只读模板&lt;/strong&gt;。可以简单理解为一个镜像即是一个可执行程序。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;容器（Container）&lt;/strong&gt;：类似于运行起来的进程，可以将其看作一个极简的&lt;code&gt;Linux&lt;/code&gt;系统环境（包括&lt;code&gt;root&lt;/code&gt;权限、进程空间、用户空间和网络空间等），以及运行在其中的应用程序。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Docker&lt;/code&gt;引擎利用容器来运行、隔离各个应用。容器是镜像创建的应用实例，如果说&lt;code&gt;Image&lt;/code&gt;是定义的一个类，那么&lt;code&gt;Container&lt;/code&gt;则是这个类&lt;code&gt;new&lt;/code&gt;出来的实例。&lt;/p&gt;
-&lt;p&gt;可以创建、启动、停止、删除容器，各个容器之间是是相互隔离的，互不影响。
+&lt;p&gt;&lt;strong&gt;容器（Container）&lt;/strong&gt;：类似于运行起来的进程，可以将其看作一个&lt;a href=&#34;#link_docker1&#34;&gt;极简的 Linux 系统环境&lt;/a&gt;以及运行在其中的应用程序。Docker 引擎利用容器来运行、隔离各个应用。容器是镜像创建的应用实例，如果说 Image 是定义的一个类，那么 Container 则是这个类 new 出来的实例。可以创建、启动、停止、删除容器，各个容器之间是是相互隔离的，互不影响。&lt;/p&gt;
+
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;注意&lt;/h4&gt;
 
-    镜像本身是只读的，容器从镜像启动时，&lt;code&gt;Docker&lt;/code&gt;在镜像的上层创建一个可写层，镜像本身不变。
+    镜像本身是只读的，容器从镜像启动时，Docker 在镜像的上层创建一个可写层，镜像本身不变。
 
 &lt;/div&gt;
-&lt;/p&gt;
+
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;仓库（Repository）&lt;/strong&gt;：类似于代码仓库，这里是镜像仓库，是&lt;code&gt;Docker&lt;/code&gt;用来集中存放镜像文件的地方。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;仓库（Repository）&lt;/strong&gt;：类似于代码仓库，这里是镜像仓库，是 Docker 用来集中存放镜像文件的地方。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;注意与注册服务器（Registry）的区别：&lt;/h4&gt;
 
-    &lt;p&gt;注册服务器是存放仓库的地方，一般会有多个仓库；而仓库是存放镜像的地方，一般每个仓库存放一类镜像，&lt;/p&gt;
-&lt;p&gt;每个镜像利用&lt;code&gt;tag&lt;/code&gt;进行区分，比如&lt;code&gt;Ubuntu&lt;/code&gt;仓库存放有多个版本（12.04、14.04等）的&lt;code&gt;Ubuntu&lt;/code&gt;镜像。&lt;/p&gt;
-
+    注册服务器是存放仓库的地方，一般会有多个仓库；而仓库是存放镜像的地方，一般每个仓库存放一类镜像，每个镜像利用 tag 进行区分，比如 Ubuntu 仓库存放有多个版本（12.04、14.04等）的 Ubuntu 镜像。
 
 &lt;/div&gt;
 
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;docker-安装&#34;&gt;&lt;code&gt;Docker&lt;/code&gt; 安装📃&lt;/h2&gt;
-&lt;p&gt;参考官方&lt;a href=&#34;https://docs.docker.com/engine/install/&#34;&gt;安装教程&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;linux-安装&#34;&gt;&lt;code&gt;Linux&lt;/code&gt; 安装&lt;/h3&gt;
-&lt;p&gt;以&lt;code&gt;CentOS&lt;/code&gt;为例，要在&lt;code&gt;CentOS&lt;/code&gt;上开始使用&lt;code&gt;Docker&lt;/code&gt;引擎，请确保满足先决条件：&lt;code&gt;CentOS&lt;/code&gt;版本要求&lt;code&gt;CentOS 7&lt;/code&gt;或者 &lt;code&gt;CentOS 8&lt;/code&gt;，然后在安装&lt;code&gt;Docker&lt;/code&gt; ，更多安装方式可移步官方参考&lt;a href=&#34;https://docs.docker.com/engine/install/centos/&#34;&gt;安装教程&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以 CentOS 为例，要在 CentOS 上开始使用 Docker 引擎，请确保满足&lt;strong&gt;先决条件&lt;/strong&gt;：CentOS 版本要求 CentOS 7 或者 CentOS 8，然后在安装 Docker，更多安装方式可移步官方参考&lt;a href=&#34;https://docs.docker.com/engine/install/centos/&#34;&gt;安装教程&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;安装步骤&lt;/strong&gt;如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;确定&lt;code&gt;CentOS&lt;/code&gt;版本，要求&lt;code&gt;CentOS 7&lt;/code&gt;或者 &lt;code&gt;CentOS 8&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;确定 CentOS 版本，要求CentOS 7 或者 CentOS 8&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cat /etc/os-release
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201201104316.png&#34; style=&#34;zoom:70%;&#34; /&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;提示&lt;/h4&gt;
 
-    以下命令都在&lt;code&gt;Linux&lt;/code&gt;终端执行
+       &lt;details&gt;
+       &lt;summary&gt;&lt;/summary&gt;
+       &lt;p&gt;
+      &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201201104316.png&#34; style=&#34;zoom:60%;&#34; /&gt;
+       &lt;/p&gt;
+   &lt;/details&gt;
+
 
 &lt;/div&gt;
-&lt;/p&gt;
+
+&lt;p&gt;以下命令都在 Linux 终端执行&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;卸载旧版本 &lt;code&gt;docker&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;卸载旧版本 Docker&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum remove docker &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;                  docker-client &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;                  docker-client-latest &lt;span style=&#34;color:#4e9a06&#34;&gt;\
@@ -2601,7 +2611,7 @@ bar := &amp;quot;foo&amp;quot;;
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;提示&lt;/h4&gt;
 
-    旧版本的 &lt;code&gt;Docker&lt;/code&gt; 被称为 &lt;code&gt;docker&lt;/code&gt; 或 &lt;code&gt;docker-engine&lt;/code&gt;，卸载时路径&lt;code&gt;/var/lib/docker/&lt;/code&gt; 下的内容，包括镜像&lt;code&gt;images&lt;/code&gt;、容器&lt;code&gt;containers&lt;/code&gt;、卷&lt;code&gt;volumes&lt;/code&gt;和网络&lt;code&gt;networks&lt;/code&gt;，都将被保留。 &lt;code&gt;Docker&lt;/code&gt;引擎包现在称为&lt;code&gt;docker-ce&lt;/code&gt;
+    旧版本的  Docker 被称为 docker 或 docker-engine，卸载时路径&lt;code&gt;/var/lib/docker/&lt;/code&gt; 下的内容，包括镜像images、容器 containers、卷 volumes 和网络 networks，都将被保留。 Docker 引擎包现在称为&lt;code&gt;docker-ce&lt;/code&gt;
 
 &lt;/div&gt;
 
@@ -2623,16 +2633,23 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 &lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&lt;/span&gt;    https://download.docker.com/linux/centos/docker-ce.repo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;安装&lt;code&gt;Docker&lt;/code&gt;社区版&lt;/p&gt;
+&lt;p&gt;安装 Docker 社区版&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install docker-ce-&amp;lt;VERSION_STRING&amp;gt; docker-ce-cli-&amp;lt;VERSION_STRING&amp;gt; containerd.io
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;提示&lt;/h4&gt;
 
-    &lt;p&gt;&lt;code&gt;&amp;lt;VERSION_STRING&amp;gt;&lt;/code&gt;为版本号，例如&lt;code&gt;docker-ce-18.09.1&lt;/code&gt;，此命令会安装 &lt;code&gt;Docker&lt;/code&gt;，但不会启动 &lt;code&gt;Docker&lt;/code&gt;。 它还创建了一个 &lt;code&gt;docker&lt;/code&gt; 组，但是默认情况下它不会将任何用户添加到该组中。 &lt;code&gt;&amp;lt;VERSION_STRING&amp;gt;&lt;/code&gt;为可选项，也可以直接省略安装：&lt;/p&gt;
+    &lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;docker-ce&lt;/code&gt;为社区版&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;VERSION_STRING&amp;gt;&lt;/code&gt;为版本号，例如&lt;code&gt;docker-ce-18.09.1&lt;/code&gt;，此命令会安装 Docker，但不会启动 Docker。 它还创建了一个 Docker 组，但是默认情况下它不会将任何用户添加到该组中。 &lt;code&gt;&amp;lt;VERSION_STRING&amp;gt;&lt;/code&gt;为可选项，也可以直接省略安装：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install docker-ce docker-ce-cli containerd.io
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
 
 &lt;/div&gt;
 
@@ -2657,11 +2674,11 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;启动&lt;code&gt;Docker&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;启动 Docker&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo systemctl start docker
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;通过运行 &lt;code&gt;hello-world&lt;/code&gt; 镜像来验证&lt;code&gt;Docker&lt;/code&gt;引擎是否已正确安装&lt;/p&gt;
+&lt;p&gt;通过运行 hello-world 镜像来验证 Docker 引擎是否已正确安装&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo docker run hello-world
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2681,16 +2698,163 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;windows-安装&#34;&gt;&lt;code&gt;Windows&lt;/code&gt; 安装&lt;/h3&gt;
-&lt;h3 id=&#34;macos-安装&#34;&gt;&lt;code&gt;macOS&lt;/code&gt; 安装&lt;/h3&gt;
-&lt;h2 id=&#34;docker-命令&#34;&gt;&lt;code&gt;Docker&lt;/code&gt; 命令📃&lt;/h2&gt;
+&lt;h3 id=&#34;windows-安装&#34;&gt;Windows 安装&lt;/h3&gt;
+&lt;h3 id=&#34;macos-安装&#34;&gt;macOS 安装&lt;/h3&gt;
+&lt;h2 id=&#34;docker-命令&#34;&gt;Docker 命令📃&lt;/h2&gt;
+&lt;h3 id=&#34;帮助命令&#34;&gt;帮助命令&lt;/h3&gt;
+&lt;div class=&#34;card-deck mb-4&#34;&gt;
+  	&lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        查看Docker版本信息
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_5nd&#34;&gt;docker version&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+	 &lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        查看Docker系统信息
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_6nd&#34;&gt;docker info&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+	
+  	&lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        帮助命令
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_7nd&#34;&gt;docker [命令COMMAND] &amp;ndash;help&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip&lt;/h4&gt;
+
+    &lt;p&gt;每一个命令大括号&lt;code&gt;[...]&lt;/code&gt;中的内容为可选参数，例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;root@VM-24-11-centos ~&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# docker version --help&lt;/span&gt;
+Usage:  docker version &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;OPTIONS&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+Show the Docker version information
+Options:
+  -f, --format string       Format the output using the given Go template
+      --kubeconfig string   Kubernetes config file
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;root@VM-24-11-centos ~&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;打印出了&lt;code&gt;docker version&lt;/code&gt;命令的使用方式，使用&lt;code&gt;docker --help&lt;/code&gt;可以打印出所有命令的简单&lt;/p&gt;
+
+
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=link_5nd&gt;&lt;strong&gt;&lt;code&gt;docker version&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：查看 Docker 版本信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Success&lt;/h4&gt;
+
+      &lt;details &gt;
+      &lt;summary&gt;&lt;/summary&gt;
+      &lt;p&gt;
+          &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231418251.png&#34; /&gt;
+      &lt;/p&gt;
+  &lt;/details&gt;
+
+
+&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=link_6nd&gt;&lt;strong&gt;&lt;code&gt;docker info&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：查看 Docker 系统信息，包括镜像和容器的数量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker info
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Success&lt;/h4&gt;
+
+      &lt;details &gt;
+      &lt;summary&gt;&lt;/summary&gt;
+      &lt;p&gt;
+          &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231112010.png&#34; style=&#34;zoom:50%;&#34; /&gt;
+      &lt;/p&gt;
+  &lt;/details&gt;
+
+
+&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=link_7nd&gt;&lt;strong&gt;&lt;code&gt;docker [命令COMMAND] --help&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：查看 Docker 系统信息，包括镜像和容器的数量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker --help
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Success&lt;/h4&gt;
+
+      &lt;details &gt;
+      &lt;summary&gt;&lt;/summary&gt;
+      &lt;p&gt;
+          &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231115318.png&#34; style=&#34;zoom:50%;&#34; /&gt;
+      &lt;/p&gt;
+  &lt;/details&gt;
+
+
+&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;镜像命令&#34;&gt;镜像命令&lt;/h3&gt;
 &lt;p&gt;&lt;div class=&#34;card-deck mb-4&#34;&gt;
   	&lt;div class=&#34;card mb-4&#34;&gt;
   
     &lt;div class=&#34;card-header&#34;&gt;
       
-        查看本地系统镜像信息
+        查看本地主机镜像信息
       
     &lt;/div&gt;
   
@@ -2722,7 +2886,7 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
     
       &lt;p class=&#34;card-text&#34;&gt;
         
-          &lt;a href=&#34;#_link_2nd&#34;&gt;docker search&lt;/a&gt;
+          &lt;a href=&#34;#link_2nd&#34;&gt;docker search&lt;/a&gt;
         
       &lt;/p&gt;
     
@@ -2744,7 +2908,7 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
     
       &lt;p class=&#34;card-text&#34;&gt;
         
-          &lt;a href=&#34;#_link_3nd&#34;&gt;docker pull&lt;/a&gt;
+          &lt;a href=&#34;#link_3nd&#34;&gt;docker pull&lt;/a&gt;
         
       &lt;/p&gt;
     
@@ -2768,7 +2932,7 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
     
       &lt;p class=&#34;card-text&#34;&gt;
         
-          &lt;a href=&#34;#_link_4nd&#34;&gt;docker rmi -f &amp;lt; IMAGE ID&amp;gt;&lt;/a&gt;
+          &lt;a href=&#34;#link_4nd&#34;&gt;docker rmi -f &amp;lt; IMAGE ID&amp;gt;&lt;/a&gt;
         
       &lt;/p&gt;
     
@@ -2780,21 +2944,32 @@ sudo yum-config-manager &lt;span style=&#34;color:#4e9a06&#34;&gt;\
 &lt;hr&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=link_1nd&gt;&lt;strong&gt;docker image&lt;/strong&gt;&lt;/a&gt;：查看所有本地系统中镜像信息&lt;/p&gt;
+&lt;p&gt;&lt;a id=link_1nd&gt;&lt;strong&gt;&lt;code&gt;docker image&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：查看所有本地主机镜像信息&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;root@VM-24-11-centos ~&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# docker images&lt;/span&gt;
 REPOSITORY            TAG          IMAGE ID       CREATED        SIZE
 docsy/docsy-example   latest       3654c1a49620   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt; days ago     673MB
 klakegg/hugo          ext-alpine   99297968b5d5   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt; weeks ago    671MB
 hello-world           latest       feb5d9fea6a5   &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3&lt;/span&gt; months ago   13.3kB
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;REPOSITORY&lt;/code&gt;：镜像的仓库源&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;TAG&lt;/code&gt;：镜像标签&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;IMAGE ID&lt;/code&gt;：镜像ID&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;SIZE&lt;/code&gt;：镜像大小&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;REPOSITORY&lt;/code&gt;：镜像的仓库源&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;TAG&lt;/code&gt;：镜像标签&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;IMAGE ID&lt;/code&gt;：镜像ID&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;SIZE&lt;/code&gt;：镜像大小&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;CREATED&lt;/code&gt;：镜像创建时间&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=_link_2nd&gt;&lt;strong&gt;docker search&lt;/strong&gt;&lt;/a&gt;：查看存在的镜像信息&lt;/p&gt;
+&lt;p&gt;&lt;a id=link_2nd&gt;&lt;strong&gt;&lt;code&gt;docker search&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：查看存在的镜像信息&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker search hello-world
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2813,7 +2988,7 @@ hello-world           latest       feb5d9fea6a5   &lt;span style=&#34;color:#000
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=_link_3nd&gt;&lt;strong&gt;docker pull&lt;/strong&gt;&lt;/a&gt;：下载镜像&lt;/p&gt;
+&lt;p&gt;&lt;a id=link_3nd&gt;&lt;strong&gt;&lt;code&gt;docker pull&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：下载镜像&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull &amp;lt; IMAGE ID&amp;gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 默认下载最近 latest 版本的镜像&lt;/span&gt;
 docker pull  &amp;lt; IMAGE ID&amp;gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;: tag&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 下载指定版本的镜像&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker pull kitematic/hello-world-nginx
@@ -2834,7 +3009,7 @@ docker pull  &amp;lt; IMAGE ID&amp;gt;&lt;span style=&#34;color:#ce5c00;font-wei
 
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a id=_link_4nd&gt;&lt;strong&gt;docker rmi -f &lt;IMAGE ID&gt; [IMAGE ID] [IMAGE ID]&lt;/strong&gt;&lt;/a&gt;：删除镜像&lt;/p&gt;
+&lt;p&gt;&lt;a id=link_4nd&gt;&lt;strong&gt;&lt;code&gt;docker rmi -f &amp;lt;IMAGE ID&amp;gt; [IMAGE ID] [IMAGE ID]&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：删除镜像&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker rmi -f 3654c1a49620
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -2853,42 +3028,267 @@ docker pull  &amp;lt; IMAGE ID&amp;gt;&lt;span style=&#34;color:#ce5c00;font-wei
 
 &lt;/li&gt;
 &lt;/ul&gt;
-
-
-&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;警告&lt;/h4&gt;
-
+&lt;h3 id=&#34;容器命令&#34;&gt;容器命令&lt;/h3&gt;
+&lt;div class=&#34;card-deck mb-4&#34;&gt;
+  	&lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        新建容器并运行
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
     
-
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_1nd&#34;&gt;docker run&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
 &lt;/div&gt;
 
-
-
-&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;提示&lt;/h4&gt;
-
+  	&lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        查看容器信息
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
     
-
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_2nd&#34;&gt;docker ps [OPTIONS]&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
 &lt;/div&gt;
 
+  	&lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        删除容器
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_3nd&#34;&gt;docker rm&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
 
+&lt;/div&gt;
+&lt;div class=&#34;card-deck mb-4&#34;&gt;
+    &lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        查看本地系统镜像信息
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_1nd&#34;&gt;docker start&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+    &lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        查看存在的镜像信息
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_2nd&#34;&gt;docker restart&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+	&lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        下载镜像
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_3nd&#34;&gt;docker stop&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+	&lt;div class=&#34;card mb-4&#34;&gt;
+  
+    &lt;div class=&#34;card-header&#34;&gt;
+      
+        下载镜像
+      
+    &lt;/div&gt;
+  
+  &lt;div class=&#34;card-body&#34;&gt;
+    
+    
+    
+      &lt;p class=&#34;card-text&#34;&gt;
+        
+          &lt;a href=&#34;#link_3nd&#34;&gt;docker kill&lt;/a&gt;
+        
+      &lt;/p&gt;
+    
+  &lt;/div&gt;
+  
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=link_4nd&gt;&lt;strong&gt;&lt;code&gt;docker run&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：新建容器并运行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker run &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;可选参数&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; 镜像IMAGE &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;COMMAND&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;常用可选参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--name=&amp;quot;NAME&amp;quot;&lt;/code&gt;：容器名字&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-d&lt;/code&gt;：容器在后台运行&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-it&lt;/code&gt;：以交互模式运行容器，并为容器重新分配一个&lt;a id=&#34;link_docker1&#34;&gt;伪输入终端&lt;/a&gt;，使用命令&lt;code&gt;exit&lt;/code&gt;退出容器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 启动容器, 进入容器环境(伪输入终端),类似一个极简的Linux环境,可以执行Linux相关命令&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;root@VM-24-11-centos ~&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# docker run -it centos:latest /bin/bash &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;成功&lt;/h4&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Success&lt;/h4&gt;
 
-    
+      &lt;details&gt;
+      &lt;summary&gt;&lt;/summary&gt;
+      &lt;p&gt;
+     &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231350418.png&#34; style=&#34;zoom:60%;&#34; /&gt;
+      &lt;/p&gt;
+  &lt;/details&gt;
 
-&lt;/div&gt;
-
-
-
-&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
-
-    此命令下载测试映像并在容器中运行它。 当容器运行时，它会打印一条消息并退出。
 
 &lt;/div&gt;
 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 退出容器&lt;/span&gt;
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;root@3a6349d6c1b4 /&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# exit &lt;/span&gt;
+&lt;span style=&#34;color:#204a87&#34;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip&lt;/h4&gt;
+
+    &lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;code&gt;exit&lt;/code&gt;退出容器，此时容器的状态处于 Exit，而不是后台运行。若不使用 &lt;code&gt;exit&lt;/code&gt;，而是使用CTRL+p CTRL+q 退出，此时容器的状态为Up&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果使用&lt;code&gt;-d&lt;/code&gt;参数，则只会在后台运行容器&lt;code&gt;centos:latest&lt;/code&gt;，而不会进入伪终端&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+  &lt;details&gt;
+      &lt;summary&gt;&lt;/summary&gt;
+      &lt;p&gt;
+     &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231935209.png&#34; style=&#34;zoom:60%;&#34; /&gt;
+      &lt;/p&gt;
+  &lt;/details&gt;
+
+
+&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a id=link_4nd&gt;&lt;strong&gt;&lt;code&gt;docker ps&lt;/code&gt;&lt;/strong&gt;&lt;/a&gt;：显示当前正在运行的容器&lt;/p&gt;
+&lt;p&gt;可选参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-a&lt;/code&gt;：显示所有的容器，包括未运行的&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-n&lt;/code&gt;：列出最近创建的n个容器&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-q&lt;/code&gt;：只显示容器的编号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# docker ps -a&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip&lt;/h4&gt;
+
+      &lt;details&gt;
+      &lt;summary&gt;&lt;/summary&gt;
+      &lt;p&gt;
+     &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231918349.png&#34; style=&#34;zoom:60%;&#34; /&gt;
+      &lt;/p&gt;
+  &lt;/details&gt;
+
+
+&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;docker rm&lt;/code&gt;：删除容器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;docker rm 容器ID     &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 删除指定容器, 不能删除正在运行的容器&lt;/span&gt;
+docker rm -f 容器ID  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 强制删除指定容器&lt;/span&gt;
+docker rm &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span&gt;docker ps -a -q&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 删除所有已经停止的容器&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Tip&lt;/h4&gt;
+
+      &lt;details&gt;
+      &lt;summary&gt;&lt;/summary&gt;
+      &lt;p&gt;
+     &lt;img src=&#34;https://gitee.com/giteewyj/javashare-blog-pic/raw/master/blog-imgs/202201231955445.png&#34; style=&#34;zoom:60%;&#34; /&gt;
+      &lt;/p&gt;
+  &lt;/details&gt;
+
+
+&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
