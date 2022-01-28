@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaShare – 自定义页面</title>
-    <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/</link>
+    <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/</link>
     <description>Recent content in 自定义页面 on JavaShare</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: 自定义子页面1</title>
-      <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</link>
+      <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</guid>
+      <guid>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</guid>
       <description>
         
         
@@ -205,10 +205,10 @@ Welcome!
     
     <item>
       <title>Docs: 自定义子页面2</title>
-      <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</link>
+      <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</guid>
+      <guid>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</guid>
       <description>
         
         
@@ -278,10 +278,10 @@ Foo -&amp;gt; Foo7: To queue
     
     <item>
       <title>Docs: Redis</title>
-      <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</link>
+      <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</guid>
+      <guid>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</guid>
       <description>
         
         

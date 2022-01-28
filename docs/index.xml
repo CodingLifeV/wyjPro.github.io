@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaShare – Documentation</title>
-    <link>http://wyjPro.github.io/docs/</link>
+    <link>http://localhost/docs/</link>
     <description>Recent content in Documentation on JavaShare</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="http://wyjPro.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: 自定义子页面1</title>
-      <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</link>
+      <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</guid>
+      <guid>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A21/</guid>
       <description>
         
         
@@ -205,10 +205,10 @@ Welcome!
     
     <item>
       <title>Docs: Bed and Chair Metrics</title>
-      <link>http://wyjPro.github.io/docs/tasks/beds/</link>
+      <link>http://localhost/docs/tasks/beds/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/tasks/beds/</guid>
+      <guid>http://localhost/docs/tasks/beds/</guid>
       <description>
         
         
@@ -518,10 +518,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Configuring Ponycopters</title>
-      <link>http://wyjPro.github.io/docs/tasks/ponycopters/configuring-ponycopters/</link>
+      <link>http://localhost/docs/tasks/ponycopters/configuring-ponycopters/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/tasks/ponycopters/configuring-ponycopters/</guid>
+      <guid>http://localhost/docs/tasks/ponycopters/configuring-ponycopters/</guid>
       <description>
         
         
@@ -831,10 +831,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: 自定义子页面2</title>
-      <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</link>
+      <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</guid>
+      <guid>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%90%E9%A1%B5%E9%9D%A22/</guid>
       <description>
         
         
@@ -904,10 +904,10 @@ Foo -&amp;gt; Foo7: To queue
     
     <item>
       <title>Docs: Launching Ponycopters</title>
-      <link>http://wyjPro.github.io/docs/tasks/ponycopters/launching-ponycopters/</link>
+      <link>http://localhost/docs/tasks/ponycopters/launching-ponycopters/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/tasks/ponycopters/launching-ponycopters/</guid>
+      <guid>http://localhost/docs/tasks/ponycopters/launching-ponycopters/</guid>
       <description>
         
         
@@ -1217,10 +1217,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Redis</title>
-      <link>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</link>
+      <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</guid>
+      <guid>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/redis/redis/</guid>
       <description>
         
         
@@ -1257,10 +1257,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Multi-Bear Domicile Setup</title>
-      <link>http://wyjPro.github.io/docs/tutorials/multi-bear/</link>
+      <link>http://localhost/docs/tutorials/multi-bear/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/tutorials/multi-bear/</guid>
+      <guid>http://localhost/docs/tutorials/multi-bear/</guid>
       <description>
         
         
@@ -1570,10 +1570,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Porridge Assessment</title>
-      <link>http://wyjPro.github.io/docs/tasks/porridge/</link>
+      <link>http://localhost/docs/tasks/porridge/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/tasks/porridge/</guid>
+      <guid>http://localhost/docs/tasks/porridge/</guid>
       <description>
         
         
@@ -1883,10 +1883,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Another Task</title>
-      <link>http://wyjPro.github.io/docs/tasks/task/</link>
+      <link>http://localhost/docs/tasks/task/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/tasks/task/</guid>
+      <guid>http://localhost/docs/tasks/task/</guid>
       <description>
         
         
@@ -2196,10 +2196,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Another Tutorial</title>
-      <link>http://wyjPro.github.io/docs/tutorials/tutorial2/</link>
+      <link>http://localhost/docs/tutorials/tutorial2/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/tutorials/tutorial2/</guid>
+      <guid>http://localhost/docs/tutorials/tutorial2/</guid>
       <description>
         
         
@@ -2509,10 +2509,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Docker入门</title>
-      <link>http://wyjPro.github.io/docs/docker/docker%E5%85%A5%E9%97%A8/</link>
+      <link>http://localhost/docs/docker/docker%E5%85%A5%E9%97%A8/</link>
       <pubDate>Wed, 19 Jan 2022 14:23:51 +0800</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/docker/docker%E5%85%A5%E9%97%A8/</guid>
+      <guid>http://localhost/docs/docker/docker%E5%85%A5%E9%97%A8/</guid>
       <description>
         
         
@@ -3306,10 +3306,10 @@ docker rm &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;$(&lt;/span
     
     <item>
       <title>Docs: Example Page</title>
-      <link>http://wyjPro.github.io/docs/getting-started/example-page/</link>
+      <link>http://localhost/docs/getting-started/example-page/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/getting-started/example-page/</guid>
+      <guid>http://localhost/docs/getting-started/example-page/</guid>
       <description>
         
         
@@ -3619,10 +3619,10 @@ bar := &amp;quot;foo&amp;quot;;
     
     <item>
       <title>Docs: Parameter Reference</title>
-      <link>http://wyjPro.github.io/docs/reference/parameter-reference/</link>
+      <link>http://localhost/docs/reference/parameter-reference/</link>
       <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://wyjPro.github.io/docs/reference/parameter-reference/</guid>
+      <guid>http://localhost/docs/reference/parameter-reference/</guid>
       <description>
         
         
