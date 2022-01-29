@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaShare – Reference</title>
+    <title>CodingLife – Reference</title>
     <link>http://localhost/docs/reference/</link>
-    <description>Recent content in Reference on JavaShare</description>
+    <description>Recent content in Reference on CodingLife</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="http://localhost/docs/reference/index.xml" rel="self" type="application/rss+xml" />

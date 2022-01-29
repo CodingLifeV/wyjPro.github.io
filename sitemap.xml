@@ -106,11 +106,11 @@
     <loc>http://localhost/blog/</loc>
     <lastmod>2018-10-05T12:27:38-04:00</lastmod>
   </url><url>
-    <loc>http://localhost/community/</loc>
-    <lastmod>2018-10-05T14:41:45+01:00</lastmod>
-  </url><url>
     <loc>http://localhost/</loc>
     <lastmod>2020-04-26T10:19:01+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost/community/</loc>
+    <lastmod>2018-10-05T14:41:45+01:00</lastmod>
   </url><url>
     <loc>http://localhost/categories/placeholders/</loc>
     <lastmod>2021-09-03T15:57:16-04:00</lastmod>

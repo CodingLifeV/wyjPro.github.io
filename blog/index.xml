@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaShare – Docsy Blog</title>
+    <title>CodingLife – Docsy Blog</title>
     <link>http://localhost/blog/</link>
-    <description>Recent content in Docsy Blog on JavaShare</description>
+    <description>Recent content in Docsy Blog on CodingLife</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="http://localhost/blog/index.xml" rel="self" type="application/rss+xml" />

@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JavaShare – 自定义页面</title>
+    <title>CodingLife – 自定义页面</title>
     <link>http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/</link>
-    <description>Recent content in 自定义页面 on JavaShare</description>
+    <description>Recent content in 自定义页面 on CodingLife</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="http://localhost/docs/%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/index.xml" rel="self" type="application/rss+xml" />
